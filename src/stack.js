@@ -1,13 +1,17 @@
 class Stack {
-  const add () => {
-    add.push();
-  };
-  const remove () => {
-  return remove.pop();
-  };
-  get size () {
-    return this.size = array.length;
-  };
+  constructor() {
+    this.thestack = [];
+  }
+  add(value) {
+    this.thestack.unshift(value);
+  }
+  remove() {
+    if (this.thestack.length === 0) return null;
+    return this.thestack.shift();
+  }
+  get size() {
+    return this.thestack.length;
+  }
 }
 
 module.exports = Stack;
