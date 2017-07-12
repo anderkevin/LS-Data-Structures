@@ -28,4 +28,5 @@ class LinkedList {
     return container;
   }
   }
+
 module.exports = LinkedList;
