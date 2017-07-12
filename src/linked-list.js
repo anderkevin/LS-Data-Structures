@@ -22,11 +22,13 @@ class LinkedList {
   }
   contains(thing) {
     let container = false;
+    let placeholder = this.head;
     for (let i = 0; i < this.length; i++) {
-      if (thing === this.head.value) container = true;
+      if (thing === placeholder.value) container = true;
+      placeholder = placeholder.next;
     }
     return container;
   }
-  }
+}
 
 module.exports = LinkedList;
