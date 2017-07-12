@@ -16,18 +16,17 @@ class LinkedList {
     this.tail = node;
   }
   removeHead() {
-    const originalHead = this.head;
-    this.head = this.head.next;
+    const originalHead = this.head.value;
+    this.head.value = this.head.next;
     return originalHead;
   }
   contains() {
-    return this.tail;
     // for (let i = 0; i < this.length; i++) {
       // if () {
         // return true;
       // }
     // }
-  }
+  // }
 }
 
 module.exports = LinkedList;
