@@ -21,12 +21,9 @@ class LinkedList {
     return originalHead;
   }
   contains() {
-    // for (let i = 0; i < this.length; i++) {
-      // if () {
-        // return true;
-      // }
-    // }
-  // }
-}
-
+    for (let i = 0; i < this.length; i++) {
+      return true;
+    }
+  }
+  }
 module.exports = LinkedList;
