@@ -20,10 +20,12 @@ class LinkedList {
     this.head.value = this.head.next;
     return originalHead;
   }
-  contains() {
+  contains(thing) {
+    let container = false;
     for (let i = 0; i < this.length; i++) {
-      return true;
+      if (thing === this.head.value) container = true;
     }
+    return container;
   }
   }
 module.exports = LinkedList;
