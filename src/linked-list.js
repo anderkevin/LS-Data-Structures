@@ -4,30 +4,39 @@ class LinkedList {
     this.tail = null;
     // Do not modify anything inside of the constructor
   }
-  addToTail(stuff) {
+  addToTail(value) {
     const node = {
-      value: stuff,
+      value,
       next: null
     };
-    if (this.head === null) this.head = node;
-    else {
-      this.head.next = node.value;
+    if (this.head === null) {
+      this.head = node;
+      this.tail = node;
+    } else {
+      this.tail.next = node;
+      this.tail = node;
     }
-    this.tail = node;
   }
   removeHead() {
-    const originalHead = this.head.value;
-    this.head.value = this.head.next;
-    return originalHead;
-  }
-  contains(thing) {
-    let container = false;
-    let placeholder = this.head;
-    for (let i = 0; i < this.length; i++) {
-      if (thing === placeholder.value) container = true;
-      placeholder = placeholder.next;
+    if (this.head === null) return null;
+    if (this.head === this.tail) {
+      const value = this.head.value;
+      this.head = null;
+      this.tail = null;
+      return value;
     }
-    return container;
+    const value = this.head.value;
+    this.head = this.head.next;
+    return value;
+  }
+  contains(value) {
+    if (this.head === null) return false;
+    const searchList = (node) => {
+      if (node.value === value) return true;
+      if (node.next === null) return false;
+      return searchList(node.next);
+    };
+    return searchList(this.head);
   }
 }
 

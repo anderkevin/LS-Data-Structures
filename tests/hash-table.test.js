@@ -43,13 +43,12 @@ describe('HashTable', () => {
 
   /* Extra Credit */
 
-  // it('should properly handle collisions', () => {
-  //   hashTable.insert('B', 'First Value');
-  //   hashTable.insert('HI!', 'Second Value');
-  //   expect(hashTable.retrieve('B')).toBe('First Value');
-  //   expect(hashTable.retrieve('HI!')).toBe('Second Value');
-  // });
-  //
+  it('should properly handle collisions', () => {
+    hashTable.insert('B', 'First Value');
+    hashTable.insert('HI!', 'Second Value');
+    expect(hashTable.retrieve('B')).toBe('First Value');
+    expect(hashTable.retrieve('HI!')).toBe('Second Value');
+  });
   // it('should resize the hash table when > 75% full', () => {
   //   hashTable.insert('a', true);
   //   hashTable.insert('b', true);
